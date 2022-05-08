@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+// import "./classBased/App.css";
+// import Container from "./classBased/components/Container";
+
+import "./functionBased/App.css";
+import Container from "./functionBased/components/Container";
+import { Route, Routes } from "react-router-dom";
+import NotMatch from "./pages/NotMatch";
+import About from "./pages/About";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route exact path="/" element={<Container />} />
+      <Route path="/about" component={About} element={<About />} />
+      <Route path="/not-match" element={<NotMatch />} />
+    </Routes>
   );
 }
 
